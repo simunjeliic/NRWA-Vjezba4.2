@@ -33,8 +33,9 @@
 </nav>
 
 <div class="jumbotron">
-  <h1 class="display-4">Grupa 5</h1>
-  <p class="lead">Napredni razvoj web aplikacija</p>
+    <h2>Dobro došli, {{ Auth::user()->name }}</h2>
+    <h1 class="display-4">Grupa 5</h1>
+    <p class="lead">Napredni razvoj web aplikacija</p>
 </div>
 
 </body>

@@ -6,6 +6,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CountryLanguageController;
+use App\Http\Controllers\GoogleController;
 
 Route::resource('city', CityController::class);
 Route::resource('country', CountryController::class)->middleware('auth');
@@ -31,3 +32,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+Route::get('auth/google', [GoogleController::class, 'signInwithGoogle']);
+Route::get('callback/google', [GoogleController::class, 'callbackToGoogle']);

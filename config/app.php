@@ -182,6 +182,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Reliese\Coders\CodersServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -195,6 +196,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
+        App\Providers\JetstreamServiceProvider::class,
 
     ],
 
@@ -212,5 +215,6 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
+    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
 ];
