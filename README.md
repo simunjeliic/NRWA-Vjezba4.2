@@ -5,7 +5,9 @@ Simple WebApp displaying use of MVC using Laravel framework
 After cloning the app you should import the world.sql database that can be found [here.](https://dev.mysql.com/doc/index-other.html
 )<br>
 After you import the database you should setup your .env file so your database is connected to the app.<br>
+After setting up your database run `php artisan migrate`.<br>
 Place yourself in the root folder of the app and execute `composer install` and `php artisan key:generate`<br>
+You should also run `npm install` and `npm run dev`.
 
 # Running 
 Execute `php artisan serve`
